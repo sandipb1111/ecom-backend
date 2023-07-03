@@ -7,20 +7,12 @@ import {
     getCategory,
     deleteCategory,
 } from "../controllers/category.controller"
-import { validate } from "../utils/validate"
-import { categoryValidate } from "../valdator/product.validate"
 
 const router = Router()
 
 //router.get("/", authenticateToken, getCategory)
-router.get("/", authenticateToken, isAdmin, getAllCategory) // accessible by non admin user too
-router.post(
-    "/",
-    authenticateToken,
-    validate(categoryValidate),
-    isAdmin,
-    postCategory
-)
+router.get("/", authenticateToken, getAllCategory) // accessible by non admin user too
+router.post("/", authenticateToken, isAdmin, postCategory)
 router.patch("/:id", authenticateToken, isAdmin, updateCategory)
 router.delete("/:id", authenticateToken, isAdmin, deleteCategory)
 

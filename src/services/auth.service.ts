@@ -43,7 +43,6 @@ export const register = async (user: any) => {
             },
             select: {
                 email: true,
-                addresses: true,
                 phone_number: true,
                 id: true,
             },
