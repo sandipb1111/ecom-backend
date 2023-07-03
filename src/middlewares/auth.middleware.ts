@@ -42,6 +42,6 @@ export function isAdmin(req: Request, res: Response, next: NextFunction) {
     if (user && user.isAdmin) {
         next() // Proceed to the next middleware or route handler
     } else {
-        throw Boom.unauthorized("User is not an Admin")
+        throw Boom.unauthorized("User is not an Amdin")
     }
 }
