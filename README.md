@@ -1,6 +1,3 @@
 # ecomm-backend
 
-
-
-
 jus test

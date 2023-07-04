@@ -25,14 +25,14 @@ export const userLogin = async (
     }
 }
 
-export const userSignup = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    const data = await authService.register(req.body)
-    res.sendStatus(StatusCodes.CREATED).send(data)
-}
+// export const userSignup = async (
+//     req: Request,
+//     res: Response,
+//     next: NextFunction
+// ) => {
+//     const data = await authService.register(req.body)
+//     res.sendStatus(StatusCodes.CREATED).send(data)
+// }
 
 export const userLogOut = async (
     req: Request,

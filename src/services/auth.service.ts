@@ -33,7 +33,7 @@ export const login = async (email: string, password: string) => {
     return { accessToken, refreshToken }
 }
 
-export const register = async (user: any) => {
+/*export const register = async (user: any) => {
     try {
         const { email, password } = user
         const users = await prisma.user.create({
@@ -58,7 +58,7 @@ export const register = async (user: any) => {
             throw err
         }
     }
-}
+}*/
 
 export const refreshToken = async (refreshToken: any) => {
     try {

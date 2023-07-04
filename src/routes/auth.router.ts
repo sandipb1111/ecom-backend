@@ -1,7 +1,7 @@
 import { Router } from "express"
 import {
     userLogin,
-    userSignup,
+    // userSignup,
     userLogOut,
 } from "../controllers/auth.controller"
 import { validate } from "../utils/validate"
@@ -11,7 +11,7 @@ import { validate } from "../utils/validate"
 const router = Router()
 
 router.post("/login", userLogin)
-router.post("/signup", userSignup)
+//router.post("/signup", userSignup)
 router.post("/logout", userLogOut)
 
 export default router

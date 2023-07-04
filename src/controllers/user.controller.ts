@@ -3,18 +3,18 @@ import { NextFunction, Request, Response } from "express"
 import * as userService from "../services/user.service"
 import { StatusCodes } from "http-status-codes"
 
-export const postUserdata = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    try {
-        const data = await userService.postUserss(req.body)
-        res.sendStatus(StatusCodes.CREATED).send(data)
-    } catch (err) {
-        next(err)
-    }
-}
+// export const postUserdata = async (
+//     req: Request,
+//     res: Response,
+//     next: NextFunction
+// ) => {
+//     try {
+//         const data = await userService.postUserss(req.body)
+//         res.sendStatus(StatusCodes.CREATED).send(data)
+//     } catch (err) {
+//         next(err)
+//     }
+// }
 
 export const updateUser = async (
     req: Request,
@@ -47,24 +47,24 @@ export const readUser = async (
     res.send(data)
 }
 
-export const postUser = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    try {
-        const { email, password, isAdmin, phone_number } = req.body
-        const data = await userService.createUser(
-            email,
-            password,
-            isAdmin,
-            phone_number
-        )
-        res.sendStatus(StatusCodes.CREATED)
-    } catch (err) {
-        next(err)
-    }
-}
+// export const postUser = async (
+//     req: Request,
+//     res: Response,
+//     next: NextFunction
+// ) => {
+//     try {
+//         const { email, password, isAdmin, phone_number } = req.body
+//         const data = await userService.createUser(
+//             email,
+//             password,
+//             isAdmin,
+//             phone_number
+//         )
+//         res.sendStatus(StatusCodes.CREATED)
+//     } catch (err) {
+//         next(err)
+//     }
+// }
 
 export const deleteUser = async (
     req: Request,
