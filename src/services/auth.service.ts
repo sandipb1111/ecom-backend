@@ -22,9 +22,9 @@ export const login = async (email: string, password: string) => {
             throw Boom.notFound("Record does not exist")
         }
     }
-    const passwordMatch = await bcrypt.compare(password, user.password)
+    //const passwordMatch = await bcrypt.compare(password, user.password)
 
-    if (!passwordMatch) {
+    if (user.password != password) {
         throw Boom.unauthorized("Password Does not match")
     }
     const accessToken = createAccessToken(user.id, user.isAdmin)
